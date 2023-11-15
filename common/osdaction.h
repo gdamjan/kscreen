@@ -31,6 +31,7 @@ public:
         Clone,
         ExtendLeft,
         ExtendRight,
+        ExtendTop,
     };
     Q_ENUM(Action)
 

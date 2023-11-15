@@ -28,6 +28,7 @@ public:
         TurnOffEmbedded = 3,
         TurnOffExternal = 4,
         ExtendToRight = 5,
+        ExtendToTop = 6,
     };
 
     static Generator *self();

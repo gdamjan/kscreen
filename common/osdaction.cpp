@@ -24,6 +24,7 @@ QVector<OsdAction> OsdAction::availableActions()
         {Clone, i18nd("kscreen_common", "Unify outputs"), QStringLiteral("osd-duplicate")},
         {ExtendLeft, i18nd("kscreen_common", "Extend to left"), QStringLiteral("osd-sbs-left")},
         {ExtendRight, i18nd("kscreen_common", "Extend to right"), QStringLiteral("osd-sbs-sright")},
+        {ExtendTop, i18nd("kscreen_common", "Extend to top"), QStringLiteral("osd-sbs-top")},
         {NoAction, i18nd("kscreen_common", "Leave unchanged"), QStringLiteral("dialog-cancel")},
     };
 }

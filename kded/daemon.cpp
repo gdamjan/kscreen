@@ -344,6 +344,10 @@ void KScreenDaemon::applyOsdAction(KScreen::OsdAction::Action action)
         qCDebug(KSCREEN_KDED) << "OSD: extend right";
         doApplyConfig(Generator::self()->displaySwitch(Generator::ExtendToRight));
         return;
+    case KScreen::OsdAction::ExtendTop:
+        qCDebug(KSCREEN_KDED) << "OSD: extend top";
+        doApplyConfig(Generator::self()->displaySwitch(Generator::ExtendToTop));
+        return;
     case KScreen::OsdAction::Clone:
         qCDebug(KSCREEN_KDED) << "OSD: clone";
         doApplyConfig(Generator::self()->displaySwitch(Generator::Clone));

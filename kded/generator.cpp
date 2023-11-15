@@ -261,7 +261,25 @@ KScreen::ConfigPtr Generator::displaySwitch(DisplaySwitchAction action)
         Q_ASSERT(embedded->currentMode()); // we must have a mode now
         const QSize size = embedded->geometry().size();
         external->setPos(QPoint(size.width(), 0));
+
+        return config;
+    }
+    case Generator::ExtendToTop: {
+        qCDebug(KSCREEN_KDED) << "Extend to top";
+        external->setPos(QPoint(0, 0));
         external->setEnabled(true);
+
+        const QSize sizeEmbedded = embedded->geometry().size();
+        const QSize sizeExternal = external->geometry().size();
+
+        // align the centers of the screens
+        const int x = ((sizeExternal - sizeEmbedded) / 2).width();
+
+        // put embedded right below external
+        const int y = sizeExternal.height();
+
+        embedded->setPos(QPoint(x, y));
+        embedded->setEnabled(true);
 
         return config;
     }
